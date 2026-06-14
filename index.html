@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>End UI Overhaul</title>
+
+  <style>
+    /* ===== Base layout ===== */
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #0d0d0d;
+      color: #e6e6e6;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      border: 1px solid #2e2e2e;
+      padding: 32px 36px;
+    }
+
+    /* ===== Headings ===== */
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      border-bottom: 1px solid #2e2e2e;
+      padding-bottom: 4px;
+      cursor: pointer;
+      color: #f2f2f2;
+    }
+
+    h2::after {
+      content: "▼";
+      font-size: 0.75rem;
+      margin-left: 6px;
+      opacity: 0.7;
+      transition: transform 0.2s ease;
+    }
+
+    h2.collapsed::after {
+      transform: rotate(-90deg);
+    }
+
+    /* ===== Section content ===== */
+    .section-content {
+      margin-top: 10px;
+    }
+
+    /* ===== Lists & text ===== */
+    p {
+      line-height: 1.6;
+      color: #dcdcdc;
+    }
+
+    ul, ol {
+      margin: 8px 0 8px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 4px 0;
+      color: #d0d0d0;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    /* ===== Links (Wikipedia style) ===== */
+    a {
+      color: #6ba4ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Overview -->
+    <section>
+      <h2>Overview</h2>
+      <div class="section-content">
+        <p>End UI Overhaul is a complete redesign of Minecraft’s interface inspired by the mysterious aesthetic of the End. This pack replaces menus, buttons, icons, and UI elements with a clean, purple‐themed style while remaining fully compatible with the entire Minecraft 1.21 update family.</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section>
+      <h2>Features</h2>
+      <div class="section-content">
+        <ul>
+          <li>Fully redesigned End‐themed UI</li>
+          <li>Custom buttons, menus, and inventory textures</li>
+          <li>Clean purple aesthetic inspired by the End</li>
+          <li>Compatible with all 1.21.x versions and snapshots</li>
+          <li>Lightweight and performance‐friendly</li>
+          <li>Works with vanilla and modded clients</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Supported Versions -->
+    <section>
+      <h2>Supported Versions</h2>
+      <div class="section-content">
+        <ul>
+          <li>1.21</li>
+          <li>1.21.1 → 1.21.11</li>
+          <li>1.21.2 pre‐releases</li>
+          <li>24w33a → 24w46a snapshots</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Downloads -->
+    <section>
+      <h2>Downloads</h2>
+      <div class="section-content">
+        <p><strong>Latest Release:</strong><br>
+          End UI Overhaul v1.0.0<br>
+          Compatible with Minecraft <strong>1.21 – 1.21.11</strong>
+        </p>
+
+        <p><strong>Download:</strong></p>
+        <ul>
+          <li><a href="https://modrinth.com/resourcepack/end-ui">Modrinth Release</a></li>
+          <li><a href="#direct">Direct Download</a></li>
+          <li><a href="#drive">Google Drive</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Installation -->
+    <section>
+      <h2>Installation</h2>
+      <div class="section-content">
+        <ol>
+          <li>Download the .zip file</li>
+          <li>Open Minecraft</li>
+          <li>Go to <strong>Options → Resource Packs</strong></li>
+          <li>Click <strong>Open Pack Folder</strong></li>
+          <li>Drop the .zip inside</li>
+          <li>Enable the pack</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- License -->
+    <section>
+      <h2>License</h2>
+      <div class="section-content">
+        <p>This project is licensed under <strong>All Rights Reserved</strong>.<br>
+          You may not redistribute, modify, or reupload the pack without permissions.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Collapse/expand sections
+    document.querySelectorAll("section h2").forEach((heading) => {
+      heading.addEventListener("click", () => {
+        const content = heading.nextElementSibling;
+        const collapsed = heading.classList.toggle("collapsed");
+        content.style.display = collapsed ? "none" : "block";
+      });
+    });
+  </script>
+
+</body>
+</html>
