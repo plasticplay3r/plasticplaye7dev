@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bug Report</title>
+
+  <style>
+    /* ===== Base layout ===== */
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #0d0d0d;
+      color: #e6e6e6;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      border: 1px solid #2e2e2e;
+      padding: 32px 36px;
+    }
+
+    /* ===== Headings ===== */
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      border-bottom: 1px solid #2e2e2e;
+      padding-bottom: 4px;
+      cursor: pointer;
+      color: #f2f2f2;
+    }
+
+    h2::after {
+      content: "▼";
+      font-size: 0.75rem;
+      margin-left: 6px;
+      opacity: 0.7;
+      transition: transform 0.2s ease;
+    }
+
+    h2.collapsed::after {
+      transform: rotate(-90deg);
+    }
+
+    /* ===== Section content ===== */
+    .section-content {
+      margin-top: 10px;
+    }
+
+    /* ===== Lists & text ===== */
+    p {
+      line-height: 1.6;
+      color: #dcdcdc;
+    }
+
+    ul, ol {
+      margin: 8px 0 8px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 4px 0;
+      color: #d0d0d0;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    /* ===== Links ===== */
+    a {
+      color: #6ba4ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Bug Form (exact same UI style) ===== */
+    .bug-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #1a1a1a;
+      border: 1px solid #2e2e2e;
+      padding: 20px;
+      border-radius: 6px;
+      max-width: 500px;
+    }
+
+    .bug-form label {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.95rem;
+      color: #e6e6e6;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .bug-form input,
+    .bug-form textarea {
+      margin-top: 6px;
+      padding: 10px;
+      background: #0d0d0d;
+      border: 1px solid #2e2e2e;
+      border-radius: 4px;
+      color: #f2f2f2;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .bug-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .bug-form button {
+      padding: 10px 14px;
+      background: #6a2cff;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .bug-form button:hover {
+      background: #7b3dff;
+    }
+
+    /* ===== TABLES (NEW — MATCHES UI) ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      background: #1a1a1a;
+      border: 1px solid #2e2e2e;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #2e2e2e;
+      color: #e6e6e6;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: #2a2a2a;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    tr:nth-child(even) {
+      background: #161616;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Bug Report -->
+    <section>
+      <h2>Send a Bug Report</h2>
+      <div class="section-content">
+
+        <form action="https://formspree.io/f/mkolvdqw" method="POST" class="bug-form">
+
+          <label>
+            Your email:
+            <input type="email" name="email" required>
+          </label>
+
+          <label>
+            Bug description:
+            <textarea name="message" required></textarea>
+          </label>
+
+          <button type="submit">Send Bug Report</button>
+
+        </form>
+
+      </div>
+    </section>
+
+    <!-- What to expect -->
+    <section>
+      <h2>What to expect</h2>
+      <div class="section-content">
+
+        <p><strong>What it does</strong><br>
+        Min4craft is a tiny simplified 4 pixel style resource pack that shrinks Minecraft’s textures down to a super minimal look. It keeps the game recognizable while giving it a bold, clean, low detail style.</p>
+
+        <p><strong>Why you might want it</strong><br>
+        You might want to try Min4craft if you like low resolution or just want Minecraft to look simple and lightweight. It doesn’t change gameplay.</p>
+
+        <p><strong>Other information</strong><br>
+        Pack is not fully finished — there are still a few bugs.</p>
+
+        <table>
+          <tr><th>Category</th><th>16×16 Minecraft</th><th>4×4 Min4craft</th></tr>
+          <tr><td>Detail</td><td>High detail, clear shapes</td><td>Extremely simplified, minimal shapes</td></tr>
+          <tr><td>Color Variation</td><td>Many shades per block</td><td>Very few shades, flat colors</td></tr>
+          <tr><td>Block Recognition</td><td>Easy to identify</td><td>Some blocks look similar due to low detail</td></tr>
+          <tr><td>Item Clarity</td><td>Defined outlines</td><td>Items may lose detail or be hard to identify</td></tr>
+          <tr><td>Performance</td><td>Normal performance</td><td>Slightly lighter due to tiny textures</td></tr>
+          <tr><td>Style</td><td>Classic Minecraft look</td><td>Minimalistic, experimental</td></tr>
+        </table>
+
+        <p>This part was added to tell you what to expect and what changes, so you know what changes before using the pack.</p>
+
+      </div>
+    </section>
+
+    <!-- Don't waste time -->
+    <section>
+      <h2>Don't waste time</h2>
+      <div class="section-content">
+
+        <p><strong>What wasn't changed</strong><br>
+        Fire, Lava, Chest, Ender Chest, Entities</p>
+
+        <table>
+          <tr><th>Texture</th><th>Status</th></tr>
+          <tr><td>Fire</td><td>Not changed due to an error while changing texture</td></tr>
+          <tr><td>Lava</td><td>Not changed due to an error while changing texture</td></tr>
+          <tr><td>Chest</td><td>Didn't get changed even when edited</td></tr>
+          <tr><td>Ender Chest</td><td>Didn't get changed even when edited</td></tr>
+          <tr><td>Entities</td><td>Didn't change</td></tr>
+        </table>
+
+        <p>This part was made to show you what wasn't changed so you don't waste time fixing something that was never edited.</p>
+
+      </div>
+    </section>
+
+    <!-- License -->
+    <section>
+      <h2>License</h2>
+      <div class="section-content">
+        <p>This project is licensed under <strong>All Rights Reserved</strong>.<br>
+          You may not redistribute, modify, or reupload the pack without permissions.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Collapse/expand sections
+    document.querySelectorAll("section h2").forEach((heading) => {
+      heading.addEventListener("click", () => {
+        const content = heading.nextElementSibling;
+        const collapsed = heading.classList.toggle("collapsed");
+        content.style.display = collapsed ? "none" : "block";
+      });
+    });
+  </script>
+
+</body>
+</html>
