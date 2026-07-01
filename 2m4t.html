@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2m4t bug report</title>
+
+  <style>
+    /* ===== Base layout ===== */
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #0d0d0d;
+      color: #e6e6e6;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      border: 1px solid #2e2e2e;
+      padding: 32px 36px;
+    }
+
+    /* ===== Headings ===== */
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      border-bottom: 1px solid #2e2e2e;
+      padding-bottom: 4px;
+      cursor: pointer;
+      color: #f2f2f2;
+    }
+
+    h2::after {
+      content: "▼";
+      font-size: 0.75rem;
+      margin-left: 6px;
+      opacity: 0.7;
+      transition: transform 0.2s ease;
+    }
+
+    h2.collapsed::after {
+      transform: rotate(-90deg);
+    }
+
+    /* ===== Section content ===== */
+    .section-content {
+      margin-top: 10px;
+    }
+
+    /* ===== Lists & text ===== */
+    p {
+      line-height: 1.6;
+      color: #dcdcdc;
+    }
+
+    ul, ol {
+      margin: 8px 0 8px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 4px 0;
+      color: #d0d0d0;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    /* ===== Links ===== */
+    a {
+      color: #6ba4ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Bug Form (exact same UI style) ===== */
+    .bug-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #1a1a1a;
+      border: 1px solid #2e2e2e;
+      padding: 20px;
+      border-radius: 6px;
+      max-width: 500px;
+    }
+
+    .bug-form label {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.95rem;
+      color: #e6e6e6;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .bug-form input,
+    .bug-form textarea {
+      margin-top: 6px;
+      padding: 10px;
+      background: #0d0d0d;
+      border: 1px solid #2e2e2e;
+      border-radius: 4px;
+      color: #f2f2f2;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .bug-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .bug-form button {
+      padding: 10px 14px;
+      background: #6a2cff;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .bug-form button:hover {
+      background: #7b3dff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Bug Report -->
+    <section>
+      <h2>Send a Bug Report</h2>
+      <div class="section-content">
+
+        <form action="https://formspree.io/f/mgojlgbq" method="POST" class="bug-form">
+
+          <label>
+            Your email:
+            <input type="email" name="email" required>
+          </label>
+
+          <label>
+            Bug description:
+            <textarea name="message" required></textarea>
+          </label>
+
+          <button type="submit">Send Bug Report</button>
+
+        </form>
+
+      </div>
+    </section>
+
+    <!-- License -->
+    <section>
+      <h2>License</h2>
+      <div class="section-content">
+        <p>The Servers projects and websites is licensed under <strong>All Rights Reserved</strong>.<br>
+          You may not redistribute, modify, or reupload the site without permissions.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Collapse/expand sections
+    document.querySelectorAll("section h2").forEach((heading) => {
+      heading.addEventListener("click", () => {
+        const content = heading.nextElementSibling;
+        const collapsed = heading.classList.toggle("collapsed");
+        content.style.display = collapsed ? "none" : "block";
+      });
+    });
+  </script>
+
+</body>
+</html>
